@@ -83,9 +83,11 @@ export default function UrgencyBar({ compact = false }: { compact?: boolean }) {
         </div>
         <div className="h-4 w-full rounded-full bg-[#1f2229] border border-white/5 overflow-hidden">
           <div
-            className="h-full rounded-full bg-gradient-to-r from-gold-dark via-gold to-gold-light transition-all duration-700 ease-out shimmer-bg animate-shimmer"
+            className="relative h-full overflow-hidden rounded-full bg-gradient-to-r from-gold-dark via-gold to-gold-light shadow-[0_0_14px_rgba(245,216,137,0.7)] transition-all duration-700 ease-out"
             style={{ width: `${progressPct}%` }}
-          />
+          >
+            <span className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-transparent via-white/60 to-transparent animate-sweep" />
+          </div>
         </div>
         <div className="flex items-center justify-between mt-2 text-sm text-muted">
           <span>${precioActual} ahora</span>
