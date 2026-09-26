@@ -11,14 +11,14 @@ import React, {
 export type Tier = { umbral: number; precio: number };
 
 export const TIERS: Tier[] = [
-  { umbral: 0, precio: 17 },
+  { umbral: 0, precio: 12 },
   { umbral: 100, precio: 27 },
   { umbral: 200, precio: 37 },
 ];
 
 // Extra reference row for the pricing table (offer closes, no further real price).
 export const TABLE_TIERS = [
-  { label: "0 – 99 ventas", precio: 17, active: true, closed: false },
+  { label: "0 – 99 ventas", precio: 12, active: true, closed: false },
   { label: "100 – 199 ventas", precio: 27, active: false, closed: false },
   { label: "200 – 299 ventas", precio: 37, active: false, closed: false },
   { label: "300+ ventas", precio: null, active: false, closed: true },
