@@ -1,5 +1,6 @@
 import SectionHeading from "@/components/SectionHeading";
 import RevealSection from "@/components/RevealSection";
+import FallbackImage from "@/components/FallbackImage";
 
 // Ilustraciones SVG ligeras (sin dependencias externas) alusivas a cada dolor.
 function IlustCansancio() {
@@ -64,25 +65,33 @@ const DOLORES = [
   {
     titulo: "Cansancio que no se explica",
     texto:
-      "Duermes tus horas, pero despiertas agotado. Te dicen que es 'estrés' cuando en realidad tu cuerpo ya no procesa bien la glucosa.",
+      "Duermes tus horas, pero despiertas agotado. Te dicen que es “estrés” cuando en realidad puede haber distintos factores metabólicos que conviene evaluar.",
+    imagen: "/images/cansancio-resistencia-insulina.png",
+    alt: "Mujer con cansancio y falta de energía",
     Ilust: IlustCansancio,
   },
   {
     titulo: "Peso que no baja aunque hagas dieta",
     texto:
-      "Bajas dos kilos y los recuperas. Cuando hay resistencia a la insulina, contar calorías no resuelve el problema de fondo.",
+      "Bajas dos kilos y los recuperas. La resistencia a la insulina puede ser uno de varios factores que dificultan el control del peso.",
+    imagen: "/images/peso-resistencia-insulina.png",
+    alt: "Persona preocupada por la dificultad para bajar de peso",
     Ilust: IlustPeso,
   },
   {
-    titulo: "Hambre y ansiedad por azúcar",
+    titulo: "Hambre y antojos por azúcar",
     texto:
-      "Picos y caídas bruscas de glucosa que te empujan a comer más de lo que quieres, y luego te sientes culpable por algo que no controlas del todo.",
+      "El hambre frecuente y los antojos pueden aparecer por múltiples razones. Si son persistentes, vale la pena revisar tus hábitos y tu salud metabólica.",
+    imagen: "/images/antojos-azucar.png",
+    alt: "Mujer frente a alimentos dulces",
     Ilust: IlustAnsiedad,
   },
   {
-    titulo: "Análisis 'normales' que no cuadran con cómo te sientes",
+    titulo: "Análisis “normales” que no cuadran con cómo te sientes",
     texto:
-      "Tu glucosa en ayunas sale bien, pero nadie evaluó tu insulina. Ahí es exactamente donde se esconde el problema.",
+      "Una glucosa en ayunas dentro del rango esperado no siempre responde todas las preguntas. Un profesional puede determinar qué otros factores o pruebas conviene evaluar.",
+    imagen: "/images/glucosa-analisis.png",
+    alt: "Medición de glucosa en sangre",
     Ilust: IlustAnalisis,
   },
 ];
@@ -91,7 +100,7 @@ const ERRORES = [
   "Enfocarse solo en el peso y no en el metabolismo",
   "Confiar únicamente en la glucosa en ayunas como indicador",
   "Empezar dietas extremas sin entender la causa",
-  "Ignorar la señal hasta que aparece un diagnóstico de Diabetes",
+  "Ignorar señales persistentes que conviene evaluar con un profesional",
 ];
 
 export default function Problema() {
@@ -104,10 +113,12 @@ export default function Problema() {
           title={
             <>
               No es falta de voluntad.{" "}
-              <span className="text-gradient-red">Es un metabolismo que dejó de escuchar a la insulina</span>
+              <span className="text-gradient-red">
+                Tu salud metabólica merece una mirada más completa
+              </span>
             </>
           }
-          subtitle="Estas son las señales que la mayoría de personas normaliza durante años, hasta que el cuerpo ya no puede compensar más."
+          subtitle="Algunas señales pueden tener múltiples causas. Si son persistentes, conviene evaluarlas con un profesional de la salud."
         />
 
         <div className="grid gap-6 sm:grid-cols-2">
@@ -118,8 +129,17 @@ export default function Problema() {
               delay={i * 90}
               className="lift group overflow-hidden rounded-2xl border border-red-400/25 bg-[#1a0a10]/85 shadow-[0_20px_50px_-25px_rgba(239,68,68,0.6)] hover:border-red-400/60"
             >
-              <div className="relative h-36 sm:h-40 border-b border-red-400/20 bg-gradient-to-br from-red-950/80 to-[#12070b] p-4">
-                <d.Ilust />
+              <div className="relative h-[220px] border-b border-red-400/20 bg-gradient-to-br from-red-950/80 to-[#12070b]">
+                {/* Foto real; si aún no está subida en /public/images se muestra la ilustración. */}
+                <FallbackImage
+                  src={d.imagen}
+                  alt={d.alt}
+                  className="block h-full w-full object-cover"
+                >
+                  <div className="h-full w-full p-6">
+                    <d.Ilust />
+                  </div>
+                </FallbackImage>
                 <span className="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-lg bg-red-500 font-display text-base font-black text-white shadow-[0_0_20px_rgba(239,68,68,0.7)]">
                   {i + 1}
                 </span>
@@ -140,7 +160,7 @@ export default function Problema() {
           className="mt-12 rounded-2xl border-2 border-red-500/40 bg-red-950/40 p-6 sm:p-9 shadow-[0_0_60px_-20px_rgba(239,68,68,0.6)]"
         >
           <h3 className="font-display text-lg sm:text-2xl font-black text-red-300 mb-5 uppercase tracking-wide">
-            ⚠ Errores comunes que empeoran el problema
+            ⚠ Errores comunes que pueden dificultar el progreso
           </h3>
           <ul className="grid gap-3 sm:grid-cols-2">
             {ERRORES.map((e) => (
@@ -151,10 +171,10 @@ export default function Problema() {
             ))}
           </ul>
           <p className="mt-7 rounded-xl bg-black/30 p-5 text-base sm:text-lg text-red-100 leading-relaxed">
-            <strong className="text-red-300">La consecuencia real:</strong> sin
-            intervención, la resistencia a la insulina progresa silenciosamente
-            hacia prediabetes y, eventualmente, Diabetes Mellitus tipo 2 — con
-            complicaciones que sí son irreversibles.
+            <strong className="text-red-300">Importante:</strong> la resistencia a
+            la insulina puede aumentar el riesgo de prediabetes y diabetes tipo 2.
+            La evaluación y el seguimiento profesional ayudan a definir el manejo
+            adecuado para cada persona.
           </p>
         </RevealSection>
       </div>
