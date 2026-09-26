@@ -31,31 +31,40 @@ const PASOS = [
 
 export default function ComoFunciona() {
   return (
-    <section className="relative bg-ink-soft py-24 sm:py-32">
-      <div className="mx-auto max-w-3xl px-6">
+    <section className="sec-pasos relative py-24 sm:py-32 overflow-hidden">
+      <div className="mx-auto max-w-3xl px-5 sm:px-6">
         <SectionHeading
+          accent="blue"
           kicker="Cómo funciona"
-          title="Un proceso claro, en cinco pasos"
+          title={
+            <>
+              Un proceso claro, en <span className="text-gradient-gold">cinco pasos</span>
+            </>
+          }
           subtitle="Sin adivinar qué hacer primero. Cada paso construye sobre el anterior."
         />
 
         <div className="relative">
-          <div className="absolute left-5 top-2 bottom-2 w-px bg-gradient-to-b from-gold/50 via-gold/20 to-transparent sm:left-6" />
-          <div className="space-y-10">
+          <div className="absolute left-6 sm:left-7 top-2 bottom-2 w-1 rounded-full bg-gradient-to-b from-sky-400 via-gold to-teal shadow-[0_0_16px_rgba(56,189,248,0.6)]" />
+          <div className="space-y-8">
             {PASOS.map((paso, i) => (
               <RevealSection
                 key={paso.titulo}
-                delay={i * 100}
-                className="relative flex gap-5 sm:gap-6 pl-0"
+                variant="right"
+                delay={i * 110}
+                className="relative flex gap-5 sm:gap-7"
               >
-                <span className="relative z-10 flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full border border-gold/40 bg-ink-panel font-display font-bold text-gold-light shadow-goldGlow">
+                <span className="relative z-10 flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl border-2 border-sky-300/70 bg-[#0a1430] font-display text-xl sm:text-2xl font-black text-white shadow-[0_0_24px_rgba(56,189,248,0.55)]">
                   {i + 1}
                 </span>
-                <div className="pt-1">
-                  <h3 className="font-display text-lg sm:text-xl font-bold text-cream mb-1.5">
+                <div className="lift flex-1 rounded-2xl border border-sky-300/20 bg-[#0f1d42]/85 p-5 sm:p-6 hover:border-sky-300/60">
+                  <p className="font-display text-xs font-black uppercase tracking-[0.2em] text-sky-300">
+                    Paso {i + 1}
+                  </p>
+                  <h3 className="mt-1 font-display text-xl sm:text-2xl font-extrabold text-white mb-1.5">
                     {paso.titulo}
                   </h3>
-                  <p className="text-sm sm:text-base text-muted leading-relaxed">
+                  <p className="text-base sm:text-lg text-muted leading-relaxed">
                     {paso.texto}
                   </p>
                 </div>

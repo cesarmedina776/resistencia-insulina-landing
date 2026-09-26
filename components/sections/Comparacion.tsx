@@ -19,23 +19,40 @@ const DESPUES = [
 
 export default function Comparacion() {
   return (
-    <section className="relative bg-ink-panel py-24 sm:py-32">
-      <div className="mx-auto max-w-5xl px-6">
+    <section className="sec-comparacion relative py-24 sm:py-32 overflow-hidden">
+      <div className="mx-auto max-w-5xl px-5 sm:px-6">
         <SectionHeading
           kicker="El contraste"
-          title="De sobrevivir tus síntomas a entender tu metabolismo"
+          title={
+            <>
+              De <span className="text-gradient-red">sobrevivir tus síntomas</span> a{" "}
+              <span className="text-gradient-teal">entender tu metabolismo</span>
+            </>
+          }
           subtitle="Así se ve el punto de partida frente al punto de llegada cuando aplicas el sistema completo."
         />
 
-        <div className="grid gap-6 md:grid-cols-2">
-          <RevealSection className="rounded-2xl border border-red-500/20 bg-gradient-to-b from-red-950/25 to-ink-panel p-7 sm:p-8">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-red-300 mb-5">
-              Antes
-            </p>
+        <div className="relative grid gap-6 md:grid-cols-2 md:gap-10">
+          {/* Insignia central VS */}
+          <div className="pointer-events-none absolute left-1/2 top-1/2 z-10 hidden md:flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-gold-light bg-ink font-display text-lg font-black text-gold-light shadow-goldGlow">
+            VS
+          </div>
+
+          <RevealSection
+            variant="left"
+            className="rounded-3xl border-2 border-red-500/40 bg-gradient-to-b from-red-950/70 to-[#12070b]/90 p-7 sm:p-9 shadow-[0_0_60px_-20px_rgba(239,68,68,0.55)]"
+          >
+            <div className="mb-6 flex items-center gap-3">
+              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-red-500/20 text-2xl">😣</span>
+              <div>
+                <p className="font-display text-2xl font-black uppercase tracking-wide text-red-300">Antes</p>
+                <p className="text-sm font-semibold text-red-200/80">Situación actual</p>
+              </div>
+            </div>
             <ul className="space-y-4">
               {ANTES.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm sm:text-base text-cream/80">
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red-500/15 text-red-400 text-xs">
+                <li key={item} className="flex items-start gap-3 text-base sm:text-lg text-white/85">
+                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-red-500/25 text-red-300 text-xs font-black">
                     ✕
                   </span>
                   {item}
@@ -44,17 +61,28 @@ export default function Comparacion() {
             </ul>
           </RevealSection>
 
+          <div className="flex md:hidden justify-center -my-2">
+            <span className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-gold-light bg-ink text-xl font-black text-gold-light shadow-goldGlow">
+              ↓
+            </span>
+          </div>
+
           <RevealSection
+            variant="right"
             delay={150}
-            className="rounded-2xl border border-teal/30 bg-gradient-to-b from-teal-dark/20 to-ink-panel p-7 sm:p-8 shadow-tealGlow"
+            className="rounded-3xl border-2 border-teal/50 bg-gradient-to-b from-teal-dark/50 to-[#04201d]/90 p-7 sm:p-9 shadow-[0_0_70px_-15px_rgba(20,184,166,0.65)]"
           >
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-teal-light mb-5">
-              Después
-            </p>
+            <div className="mb-6 flex items-center gap-3">
+              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-teal/25 text-2xl">😊</span>
+              <div>
+                <p className="font-display text-2xl font-black uppercase tracking-wide text-teal-light">Después</p>
+                <p className="text-sm font-semibold text-teal-light/80">Situación deseada</p>
+              </div>
+            </div>
             <ul className="space-y-4">
               {DESPUES.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm sm:text-base text-cream/90">
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-teal/20 text-teal-light text-xs">
+                <li key={item} className="flex items-start gap-3 text-base sm:text-lg text-white">
+                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal text-ink text-xs font-black">
                     ✓
                   </span>
                   {item}

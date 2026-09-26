@@ -13,11 +13,11 @@ export default function UrgencyBar({ compact = false }: { compact?: boolean }) {
   } = useUrgency();
 
   return (
-    <div className="relative w-full rounded-2xl border border-gold/30 bg-gradient-to-b from-ink-panel to-ink-soft shadow-goldGlow overflow-hidden">
+    <div className="relative w-full rounded-2xl border-2 border-gold/50 bg-gradient-to-b from-[#0d0d0f] to-[#050506] text-left shadow-[0_0_70px_-12px_rgba(212,175,55,0.55)] overflow-hidden">
       {/* Banner de autoridad */}
       <div className="flex items-center justify-center gap-3 border-b border-gold/20 bg-black/30 px-4 py-3 text-center">
         <span className="text-gold text-sm">★</span>
-        <p className="font-display text-[11px] sm:text-xs tracking-[0.18em] text-gold-light uppercase">
+        <p className="font-display text-xs sm:text-sm font-extrabold tracking-[0.14em] text-gold-light uppercase">
           No es urgencia falsa. Es la política del programa.
         </p>
         <span className="text-gold text-sm">★</span>
@@ -26,42 +26,42 @@ export default function UrgencyBar({ compact = false }: { compact?: boolean }) {
       <div className={`grid grid-cols-1 sm:grid-cols-3 gap-6 px-5 sm:px-8 ${compact ? "py-6" : "py-8"}`}>
         {/* Ventas actuales */}
         <div className="text-center sm:text-left">
-          <p className="text-[11px] tracking-widest text-muted uppercase mb-2">
+          <p className="text-xs sm:text-[13px] font-bold tracking-widest text-muted uppercase mb-2">
             Ventas actuales
           </p>
-          <p className="font-display text-3xl sm:text-4xl text-white font-bold">
+          <p className="font-display text-4xl sm:text-5xl font-black text-white font-bold">
             {ventasActuales}
           </p>
           <div className="mt-2 inline-flex items-center gap-2 justify-center sm:justify-start">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full rounded-full bg-teal animate-pulseDot" />
             </span>
-            <span className="text-xs text-teal-light">Actualizando en vivo</span>
+            <span className="text-sm font-semibold text-teal-light">Actualizando en vivo</span>
           </div>
         </div>
 
         {/* Precio actual */}
         <div className="text-center border-y sm:border-y-0 sm:border-x border-white/10 py-6 sm:py-0">
-          <p className="text-[11px] tracking-widest text-muted uppercase mb-2">
+          <p className="text-xs sm:text-[13px] font-bold tracking-widest text-muted uppercase mb-2">
             Precio actual
           </p>
-          <p className="font-display text-3xl sm:text-4xl font-bold">
+          <p className="font-display text-4xl sm:text-5xl font-black font-bold">
             <span className="text-teal-light align-top text-xl mr-1">$</span>
             <span className="text-teal-light">{precioActual}</span>
             <span className="text-sm text-muted ml-1 align-middle">USD</span>
           </p>
-          <p className="mt-2 text-xs text-muted">Pago único · Acceso de por vida</p>
+          <p className="mt-2 text-sm text-muted">Pago único · Acceso de por vida</p>
         </div>
 
         {/* Faltan solo */}
         <div className="text-center sm:text-right">
-          <p className="text-[11px] tracking-widest text-muted uppercase mb-2">
+          <p className="text-xs sm:text-[13px] font-bold tracking-widest text-muted uppercase mb-2">
             Faltan solo
           </p>
-          <p className="font-display text-3xl sm:text-4xl font-bold text-gold-light">
+          <p className="font-display text-4xl sm:text-5xl font-black font-bold text-gold-light">
             {cuposRestantes}
           </p>
-          <p className="mt-2 text-xs text-muted">
+          <p className="mt-2 text-sm text-muted">
             registros para{" "}
             <span className="line-through decoration-red-400/70">
               ${precioActual}
@@ -74,20 +74,20 @@ export default function UrgencyBar({ compact = false }: { compact?: boolean }) {
       {/* Barra de progreso */}
       <div className="px-5 sm:px-8 pb-6">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-[11px] tracking-widest text-muted uppercase">
+          <span className="text-xs sm:text-[13px] font-bold tracking-widest text-muted uppercase">
             Progreso hacia el próximo precio
           </span>
-          <span className="text-sm font-bold text-gold-light">
+          <span className="text-base font-black text-gold-light">
             {progressPct.toFixed(0)}%
           </span>
         </div>
-        <div className="h-3 w-full rounded-full bg-black/50 border border-white/5 overflow-hidden">
+        <div className="h-4 w-full rounded-full bg-[#1f2229] border border-white/5 overflow-hidden">
           <div
             className="h-full rounded-full bg-gradient-to-r from-gold-dark via-gold to-gold-light transition-all duration-700 ease-out shimmer-bg animate-shimmer"
             style={{ width: `${progressPct}%` }}
           />
         </div>
-        <div className="flex items-center justify-between mt-2 text-xs text-muted">
+        <div className="flex items-center justify-between mt-2 text-sm text-muted">
           <span>${precioActual} ahora</span>
           <span>${precioSiguiente} próximo</span>
         </div>
@@ -109,11 +109,11 @@ export default function UrgencyBar({ compact = false }: { compact?: boolean }) {
                 AHORA
               </span>
             )}
-            <p className="text-[10px] uppercase tracking-wide text-muted mb-1">
+            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-wide text-muted mb-1">
               {tier.label}
             </p>
             <p
-              className={`font-display font-bold text-lg ${
+              className={`font-display font-black text-xl ${
                 tier.active ? "text-gold-light" : "text-muted"
               }`}
             >
@@ -125,7 +125,7 @@ export default function UrgencyBar({ compact = false }: { compact?: boolean }) {
 
       {/* Footer */}
       <div className="border-t border-white/10 bg-black/30 px-5 sm:px-8 py-4">
-        <p className="text-center text-xs sm:text-sm text-cream/90">
+        <p className="text-center text-sm sm:text-base font-medium text-white">
           <span className="text-gold-light font-semibold">{cuposRestantes} cupos</span>{" "}
           al precio actual — Al llegar a{" "}
           <span className="text-gold-light font-semibold">{umbralSiguiente} ventas</span>{" "}

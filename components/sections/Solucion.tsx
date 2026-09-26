@@ -20,47 +20,55 @@ const PILARES = [
 
 export default function Solucion() {
   return (
-    <section className="relative bg-ink py-24 sm:py-32 overflow-hidden">
-      <div className="absolute -right-40 top-10 h-96 w-96 rounded-full bg-teal/10 blur-3xl" />
-      <div className="mx-auto max-w-6xl px-6 relative">
+    <section className="sec-solucion relative py-24 sm:py-32 overflow-hidden">
+      <div className="aurora-blob -right-40 top-10 h-96 w-96 bg-teal/40 animate-aurora" />
+      <div className="mx-auto max-w-6xl px-5 sm:px-6 relative">
         <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
-          <RevealSection>
-            <span className="inline-block font-display text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-teal-light mb-4">
+          <RevealSection variant="left">
+            <span className="inline-block rounded-full border border-teal/40 bg-teal/10 px-4 py-1.5 font-display text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em] text-teal-light mb-5">
               La solución
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.15] text-cream">
-              <span className="text-gradient-teal">Resuelve la Resistencia a la Insulina</span>{" "}
-              — el sistema clínico paso a paso
+            <h2 className="title-pop font-display text-[2rem] sm:text-5xl font-black leading-[1.1] text-white">
+              <span className="text-gradient-teal">Resuelve la Resistencia a la Insulina</span>
+              <br />
+              el <span className="text-gradient-gold">sistema clínico</span> paso a paso
             </h2>
-            <p className="mt-5 text-base sm:text-lg text-muted leading-relaxed">
-              No es una dieta más. Es un método diseñado por un médico
-              especialista, basado en cómo se diagnostica y trata la
-              resistencia a la insulina en la práctica clínica real, traducido
-              a un lenguaje que cualquier persona puede aplicar sin depender
-              de conocimientos médicos previos.
+            <div className="heading-bar mt-6 bg-gradient-to-r from-teal-dark via-teal-light to-teal-dark" />
+            <p className="mt-6 text-lg sm:text-xl text-muted leading-relaxed">
+              <strong className="text-white">No es una dieta más.</strong> Es un
+              método diseñado por un médico especialista, basado en cómo se
+              diagnostica y trata la resistencia a la insulina en la práctica
+              clínica real, traducido a un lenguaje que cualquier persona puede
+              aplicar.
             </p>
-            <p className="mt-4 text-base sm:text-lg text-muted leading-relaxed">
-              Qué lo hace diferente: no ataca el síntoma (el peso), ataca la
-              causa metabólica de fondo — y te enseña a leer las señales de tu
-              propio cuerpo.
-            </p>
+            <div className="mt-6 rounded-2xl border-l-4 border-teal-light bg-teal/10 p-5">
+              <p className="font-display text-sm font-black uppercase tracking-[0.18em] text-teal-light">
+                Qué lo hace diferente
+              </p>
+              <p className="mt-2 text-lg text-white leading-relaxed">
+                No ataca el síntoma (el peso), ataca la{" "}
+                <strong className="text-gold-light">causa metabólica de fondo</strong>{" "}
+                — y te enseña a leer las señales de tu propio cuerpo.
+              </p>
+            </div>
           </RevealSection>
 
           <div className="space-y-5">
             {PILARES.map((p, i) => (
               <RevealSection
                 key={p.numero}
-                delay={i * 120}
-                className="flex gap-5 rounded-2xl card-border bg-ink-panel/70 p-6 shadow-tealGlow"
+                variant="right"
+                delay={i * 130}
+                className="lift flex gap-5 rounded-2xl border border-teal/30 bg-[#062522]/85 p-6 sm:p-7 shadow-tealGlow backdrop-blur hover:border-teal-light/70"
               >
-                <span className="font-display text-3xl font-extrabold text-teal/40 shrink-0">
+                <span className="font-display text-5xl font-black text-gradient-teal shrink-0 leading-none">
                   {p.numero}
                 </span>
                 <div>
-                  <h3 className="font-display font-bold text-cream mb-1">
+                  <h3 className="font-display text-xl sm:text-2xl font-extrabold text-white mb-1.5">
                     {p.titulo}
                   </h3>
-                  <p className="text-sm text-muted leading-relaxed">{p.texto}</p>
+                  <p className="text-base sm:text-lg text-muted leading-relaxed">{p.texto}</p>
                 </div>
               </RevealSection>
             ))}

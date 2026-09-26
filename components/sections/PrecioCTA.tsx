@@ -1,4 +1,4 @@
-import ThreeGlow from "@/components/ThreeGlow";
+import CTAShell from "@/components/CTAShell";
 import RevealSection from "@/components/RevealSection";
 import OfferStack from "@/components/OfferStack";
 import CTAButton from "@/components/CTAButton";
@@ -6,41 +6,37 @@ import UrgencyBar from "@/components/UrgencyBar";
 
 export default function PrecioCTA() {
   return (
-    <section className="relative overflow-hidden bg-ink py-24 sm:py-32">
-      <div className="absolute inset-0 bg-radial-fade" />
-      <ThreeGlow variant="cta" className="opacity-60" />
-
-      <div className="relative mx-auto max-w-xl px-6 text-center">
-        <RevealSection>
-          <span className="inline-block font-display text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-gold-light mb-4">
-            Oferta especial de lanzamiento
+    <CTAShell bgClass="sec-precio">
+      <RevealSection variant="blur" className="w-full">
+        <span className="inline-block rounded-full border border-gold/50 bg-gold/15 px-5 py-2 font-display text-xs sm:text-sm font-black uppercase tracking-[0.22em] text-gold-light shadow-goldGlow">
+          🔥 Oferta especial de lanzamiento
+        </span>
+        <h2 className="title-pop mt-6 font-display text-[2rem] sm:text-5xl font-black leading-[1.1] text-white">
+          Accede hoy a{" "}
+          <span className="text-gradient-gold">
+            Resuelve la Resistencia a la Insulina
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.15] text-cream">
-            Accede hoy a{" "}
-            <span className="text-gradient-gold">
-              Resuelve la Resistencia a la Insulina
-            </span>
-          </h2>
-          <p className="mt-5 text-base sm:text-lg text-muted leading-relaxed">
-            Un precio simbólico frente al valor real de tener a un especialista
-            guiando tu proceso metabólico paso a paso.
-          </p>
-        </RevealSection>
+        </h2>
+        <p className="mt-5 text-lg sm:text-xl font-medium text-muted leading-relaxed">
+          Un precio simbólico frente al valor real de tener a un{" "}
+          <strong className="text-white">especialista guiando tu proceso</strong>{" "}
+          metabólico paso a paso.
+        </p>
+      </RevealSection>
 
-        <RevealSection delay={150} className="mt-10">
-          <OfferStack />
-        </RevealSection>
+      <RevealSection variant="flip" delay={120} className="w-full">
+        <OfferStack />
+      </RevealSection>
 
-        <RevealSection delay={250} className="mt-10">
-          <CTAButton subtext="Pago 100% seguro procesado por Hotmart">
-            Quiero empezar mi cambio hoy →
-          </CTAButton>
-        </RevealSection>
+      <RevealSection variant="zoom" delay={200} className="w-full">
+        <CTAButton subtext="Pago 100% seguro procesado por Hotmart">
+          Quiero empezar mi cambio hoy →
+        </CTAButton>
+      </RevealSection>
 
-        <RevealSection delay={350} className="mt-14">
-          <UrgencyBar />
-        </RevealSection>
-      </div>
-    </section>
+      <RevealSection variant="up" delay={260} className="w-full">
+        <UrgencyBar />
+      </RevealSection>
+    </CTAShell>
   );
 }
