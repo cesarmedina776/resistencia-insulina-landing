@@ -66,7 +66,7 @@ const DOLORES = [
     titulo: "Cansancio que no se explica",
     texto:
       "Duermes tus horas, pero despiertas agotado. Te dicen que es “estrés” cuando en realidad puede haber distintos factores metabólicos que conviene evaluar.",
-    imagen: "/images/cansancio-resistencia-insulina.png",
+    imagen: "/images/cansancio-resistencia-insulina.webp",
     alt: "Mujer con cansancio y falta de energía",
     Ilust: IlustCansancio,
   },
@@ -74,7 +74,7 @@ const DOLORES = [
     titulo: "Peso que no baja aunque hagas dieta",
     texto:
       "Bajas dos kilos y los recuperas. La resistencia a la insulina puede ser uno de varios factores que dificultan el control del peso.",
-    imagen: "/images/peso-resistencia-insulina.png",
+    imagen: "/images/peso-resistencia-insulina.webp",
     alt: "Persona preocupada por la dificultad para bajar de peso",
     Ilust: IlustPeso,
   },
@@ -82,7 +82,7 @@ const DOLORES = [
     titulo: "Hambre y antojos por azúcar",
     texto:
       "El hambre frecuente y los antojos pueden aparecer por múltiples razones. Si son persistentes, vale la pena revisar tus hábitos y tu salud metabólica.",
-    imagen: "/images/antojos-azucar.png",
+    imagen: "/images/antojos-azucar.webp",
     alt: "Mujer frente a alimentos dulces",
     Ilust: IlustAnsiedad,
   },
@@ -90,7 +90,7 @@ const DOLORES = [
     titulo: "Análisis “normales” que no cuadran con cómo te sientes",
     texto:
       "Una glucosa en ayunas dentro del rango esperado no siempre responde todas las preguntas. Un profesional puede determinar qué otros factores o pruebas conviene evaluar.",
-    imagen: "/images/glucosa-analisis.png",
+    imagen: "/images/glucosa-analisis.webp",
     alt: "Medición de glucosa en sangre",
     Ilust: IlustAnalisis,
   },
