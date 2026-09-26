@@ -5,11 +5,11 @@ import RevealSection from "@/components/RevealSection";
 // los demás son placeholders con una relación de aspecto tentativa.
 const PLACEHOLDERS: { id: number; ratio: string; imagen?: string; ancho?: number; alto?: number }[] = [
   { id: 1, ratio: "560 / 1034", imagen: "/images/testimonio-1.webp", ancho: 560, alto: 1034 },
-  { id: 2, ratio: "1 / 1" },
-  { id: 3, ratio: "3 / 4" },
-  { id: 4, ratio: "9 / 16" },
-  { id: 5, ratio: "1 / 1" },
-  { id: 6, ratio: "4 / 5" },
+  { id: 2, ratio: "560 / 789", imagen: "/images/testimonio-2.webp", ancho: 560, alto: 789 },
+  { id: 3, ratio: "560 / 1361", imagen: "/images/testimonio-3.webp", ancho: 560, alto: 1361 },
+  { id: 4, ratio: "560 / 797", imagen: "/images/testimonio-4.webp", ancho: 560, alto: 797 },
+  { id: 5, ratio: "560 / 1007", imagen: "/images/testimonio-5.webp", ancho: 560, alto: 1007 },
+  { id: 6, ratio: "560 / 1027", imagen: "/images/testimonio-6.webp", ancho: 560, alto: 1027 },
   { id: 7, ratio: "3 / 4" },
   { id: 8, ratio: "1 / 1" },
 ];
