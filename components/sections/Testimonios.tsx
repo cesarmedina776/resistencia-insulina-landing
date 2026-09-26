@@ -1,10 +1,10 @@
 import SectionHeading from "@/components/SectionHeading";
 import RevealSection from "@/components/RevealSection";
 
-// Relación de aspecto tentativa por placeholder (alto/ancho variable a propósito,
-// para simular capturas reales de WhatsApp de distintos tamaños).
-const PLACEHOLDERS = [
-  { id: 1, ratio: "4 / 5" },
+// Cada testimonio con `imagen` muestra la captura completa (sin recortes);
+// los demás son placeholders con una relación de aspecto tentativa.
+const PLACEHOLDERS: { id: number; ratio: string; imagen?: string; ancho?: number; alto?: number }[] = [
+  { id: 1, ratio: "560 / 1034", imagen: "/images/testimonio-1.webp", ancho: 560, alto: 1034 },
   { id: 2, ratio: "1 / 1" },
   { id: 3, ratio: "3 / 4" },
   { id: 4, ratio: "9 / 16" },
@@ -41,6 +41,17 @@ export default function Testimonios() {
               delay={(t.id % 3) * 100}
               className="mb-5 break-inside-avoid"
             >
+              {t.imagen ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={t.imagen}
+                  alt={`Testimonio #${t.id} de un alumno del programa`}
+                  width={t.ancho}
+                  height={t.alto}
+                  loading="lazy"
+                  className="lift block h-auto w-full rounded-2xl border border-slate-300 shadow-lightCard"
+                />
+              ) : (
               <div
                 style={{ aspectRatio: t.ratio }}
                 className="lift relative w-full overflow-hidden rounded-2xl border-2 border-dashed border-teal-700/35 bg-white/80 shadow-lightCard flex flex-col items-center justify-center gap-3 px-4 text-center hover:border-teal-600"
@@ -56,6 +67,7 @@ export default function Testimonios() {
                 </p>
                 <span className="text-amber-500 text-lg tracking-widest">★★★★★</span>
               </div>
+              )}
             </RevealSection>
           ))}
         </div>
