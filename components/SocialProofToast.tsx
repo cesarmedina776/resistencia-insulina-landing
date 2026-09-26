@@ -47,7 +47,7 @@ export default function SocialProofToast() {
   return (
     <div
       key={entry.id}
-      className="fixed bottom-4 left-4 z-50 max-w-[300px] animate-toastLife rounded-xl border border-white/10 bg-ink-panel/95 px-4 py-3 shadow-cardGlow backdrop-blur"
+      className="fixed bottom-4 left-4 z-50 max-w-[330px] animate-toastLife rounded-xl border border-white/10 bg-ink-panel/95 px-4 py-3 shadow-cardGlow backdrop-blur"
       role="status"
       aria-live="polite"
     >
@@ -56,11 +56,11 @@ export default function SocialProofToast() {
           {entry.nombre.charAt(0)}
         </span>
         <div className="flex-1">
-          <p className="text-sm text-cream">
+          <p className="text-[15px] text-white">
             <span className="font-semibold">{entry.nombre}</span> acaba de
             inscribirse
           </p>
-          <p className="text-xs text-muted">desde {entry.pais}</p>
+          <p className="text-sm text-muted">desde {entry.pais}</p>
         </div>
       </div>
       <div className="mt-2 flex justify-end">

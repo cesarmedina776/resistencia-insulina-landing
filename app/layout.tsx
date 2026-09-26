@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { Sora, Inter } from "next/font/google";
+import { Montserrat, Inter } from "next/font/google";
 import "./globals.css";
 import { UrgencyProvider } from "@/lib/UrgencyContext";
 import SocialProofToast from "@/components/SocialProofToast";
+import ScrollProgress from "@/components/ScrollProgress";
 
-const sora = Sora({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-sora",
-  weight: ["600", "700", "800"],
+  variable: "--font-montserrat",
+  weight: ["600", "700", "800", "900"],
 });
 
 const inter = Inter({
@@ -30,8 +31,9 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${sora.variable} ${inter.variable} font-body bg-ink text-cream antialiased`}
+        className={`${montserrat.variable} ${inter.variable} font-body bg-ink text-cream antialiased`}
       >
+        <ScrollProgress />
         <UrgencyProvider>
           {children}
           <SocialProofToast />

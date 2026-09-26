@@ -16,12 +16,18 @@ const PLACEHOLDERS = [
 
 export default function Testimonios() {
   return (
-    <section className="relative bg-ink-soft py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl px-6">
+    <section className="sec-testimonios relative py-24 sm:py-32">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <SectionHeading
+          theme="light"
+          accent="teal"
           kicker="Resultados reales"
-          title="Lo que cuentan quienes ya aplicaron el sistema"
-          subtitle="Capturas de testimonios reales de alumnos. Espacio reservado para subir cada imagen en su formato original."
+          title={
+            <>
+              Lo que cuentan quienes <span className="text-gradient-teal-dark">ya aplicaron el sistema</span>
+            </>
+          }
+          subtitle="Capturas de testimonios reales de alumnos, mostradas en su formato original."
         />
 
         {/* Masonry en CSS columns: 1 columna en móvil, 3 en desktop.
@@ -31,22 +37,24 @@ export default function Testimonios() {
           {PLACEHOLDERS.map((t) => (
             <RevealSection
               key={t.id}
-              delay={(t.id % 4) * 90}
+              variant="zoom"
+              delay={(t.id % 3) * 100}
               className="mb-5 break-inside-avoid"
             >
               <div
                 style={{ aspectRatio: t.ratio }}
-                className="relative w-full overflow-hidden rounded-2xl border-2 border-dashed border-gold/25 bg-ink-panel/60 flex flex-col items-center justify-center gap-3 px-4 text-center"
+                className="lift relative w-full overflow-hidden rounded-2xl border-2 border-dashed border-teal-700/35 bg-white/80 shadow-lightCard flex flex-col items-center justify-center gap-3 px-4 text-center hover:border-teal-600"
               >
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/10 text-gold-light text-lg">
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-teal-600 text-2xl font-black text-white shadow-tealGlow">
                   +
                 </span>
-                <p className="text-xs sm:text-sm font-semibold text-muted">
+                <p className="font-display text-base font-extrabold text-slate-800">
                   Testimonio #{t.id}
                 </p>
-                <p className="text-[11px] text-muted/70 max-w-[80%]">
+                <p className="text-sm text-slate-600 max-w-[80%]">
                   Espacio para captura de WhatsApp / reseña
                 </p>
+                <span className="text-amber-500 text-lg tracking-widest">★★★★★</span>
               </div>
             </RevealSection>
           ))}
