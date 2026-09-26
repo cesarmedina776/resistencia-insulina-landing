@@ -14,10 +14,15 @@ export default function Autoridad() {
           <RevealSection variant="zoom" className="mx-auto">
             <div className="relative">
               <div className="absolute -inset-3 rounded-full bg-gradient-to-tr from-teal via-gold-light to-teal opacity-70 blur-xl animate-pulseDot" />
-              {/* Reemplazar por <img> con la foto del Dr. Cesar Medina */}
-              <div className="relative flex h-44 w-44 sm:h-56 sm:w-56 items-center justify-center rounded-full border-4 border-teal-light/60 bg-gradient-to-br from-[#0b2a2e] to-[#06161b] font-display text-5xl font-black text-white shadow-tealGlow">
-                CM
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/dr-cesar-medina.webp"
+                alt="Dr. Cesar Medina, Médico Especialista en Medicina Interna"
+                width={640}
+                height={640}
+                loading="lazy"
+                className="relative h-44 w-44 sm:h-56 sm:w-56 rounded-full border-4 border-teal-light/60 bg-[#0b2a2e] object-cover object-[50%_30%] shadow-tealGlow"
+              />
               <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-teal px-4 py-1 text-xs font-black uppercase tracking-wider text-ink shadow-tealGlow">
                 ✚ Médico especialista
               </span>
