@@ -10,8 +10,6 @@ const PLACEHOLDERS: { id: number; ratio: string; imagen?: string; ancho?: number
   { id: 4, ratio: "560 / 797", imagen: "/images/testimonio-4.webp", ancho: 560, alto: 797 },
   { id: 5, ratio: "560 / 1007", imagen: "/images/testimonio-5.webp", ancho: 560, alto: 1007 },
   { id: 6, ratio: "560 / 1027", imagen: "/images/testimonio-6.webp", ancho: 560, alto: 1027 },
-  { id: 7, ratio: "3 / 4" },
-  { id: 8, ratio: "1 / 1" },
 ];
 
 export default function Testimonios() {
