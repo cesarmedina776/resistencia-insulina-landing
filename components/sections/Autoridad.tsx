@@ -21,7 +21,7 @@ export default function Autoridad() {
                 width={640}
                 height={640}
                 loading="lazy"
-                className="relative h-44 w-44 sm:h-56 sm:w-56 rounded-full border-4 border-teal-light/60 bg-[#0b2a2e] object-cover object-[50%_30%] shadow-tealGlow"
+                className="relative h-64 w-64 sm:h-72 sm:w-72 md:h-80 md:w-80 rounded-full border-4 border-teal-light/60 bg-[#0b2a2e] object-cover object-[50%_30%] shadow-tealGlow"
               />
               <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-teal px-4 py-1 text-xs font-black uppercase tracking-wider text-ink shadow-tealGlow">
                 ✚ Médico especialista
