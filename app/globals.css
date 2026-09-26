@@ -145,7 +145,12 @@ body {
   opacity: 1;
   transform: none;
   filter: none;
-  clip-path: inset(0 0 0 0);
+  clip-path: none;
+}
+/* La cortina anima entre dos inset(); el final se extiende más allá del borde
+   para no recortar sombras, glows ni insignias que sobresalen. */
+.reveal-clip.is-visible {
+  clip-path: inset(-150px -150px -150px -150px);
 }
 
 /* Barra decorativa bajo los títulos que se "dibuja" al aparecer. */
