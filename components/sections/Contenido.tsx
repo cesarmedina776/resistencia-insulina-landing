@@ -3,7 +3,7 @@ import RevealSection from "@/components/RevealSection";
 import { TEMARIO } from "@/lib/data";
 
 const RECURSOS = [
-  { icon: "▶", texto: "5 módulos en video, explicados por el Dr. Cesar Medina" },
+  { icon: "▶", texto: "6 módulos en video, explicados por el Dr. Cesar Medina" },
   { icon: "⬇", texto: "Plantillas descargables de seguimiento clínico y nutricional" },
   { icon: "∞", texto: "Acceso a la plataforma de por vida, desde cualquier dispositivo" },
   { icon: "💬", texto: "Soporte directo a través del grupo privado de WhatsApp" },
@@ -21,7 +21,7 @@ export default function Contenido() {
               Todo lo que recibes <span className="text-gradient-gold-dark">al inscribirte</span>
             </>
           }
-          subtitle="Un temario clínico estructurado en 5 módulos, más los recursos que necesitas para aplicarlo desde el primer día."
+          subtitle="Un temario clínico estructurado en 6 módulos, más los recursos que necesitas para aplicarlo desde el primer día."
         />
 
         <div className="grid gap-6 sm:grid-cols-2">
@@ -55,7 +55,7 @@ export default function Contenido() {
           <RevealSection
             variant="flip"
             delay={TEMARIO.length * 90}
-            className="lift rounded-2xl bg-gradient-to-br from-slate-900 to-[#0b2a28] p-6 sm:p-7 shadow-[0_24px_50px_-20px_rgba(15,118,110,0.7)]"
+            className="lift sm:col-span-2 rounded-2xl bg-gradient-to-br from-slate-900 to-[#0b2a28] p-6 sm:p-7 shadow-[0_24px_50px_-20px_rgba(15,118,110,0.7)]"
           >
             <span className="inline-block rounded-full bg-teal px-3 py-1 text-xs font-black uppercase tracking-[0.2em] text-ink">
               Recursos incluidos

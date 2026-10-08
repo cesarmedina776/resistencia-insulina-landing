@@ -22,7 +22,7 @@ export default function OfferStack() {
       <div className="px-5 sm:px-8 pt-6">
         <p className="mb-3 flex items-center gap-2 font-display text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em] text-teal-light">
           <span className="h-px flex-1 bg-teal/30" />
-          Programa completo · 5 módulos
+          Programa completo · 6 módulos
           <span className="h-px flex-1 bg-teal/30" />
         </p>
         <ul className="space-y-2.5">

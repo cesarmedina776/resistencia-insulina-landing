@@ -55,6 +55,15 @@ export const TEMARIO = [
   },
   {
     modulo: "Módulo 5",
+    titulo: "Ejercicio Inteligente contra la Resistencia a la Insulina",
+    puntos: [
+      "Fuerza y caminata: la combinación que mejor ayuda a tus músculos a usar la glucosa",
+      "Rutina progresiva para hacer en casa, sin gimnasio y adaptable a tu nivel",
+      "Cuándo moverte para mejores resultados y cómo hacerlo de forma segura",
+    ],
+  },
+  {
+    modulo: "Módulo 6",
     titulo: "Plan de Prevención a Largo Plazo",
     puntos: [
       "Cómo evitar la progresión hacia Diabetes Mellitus tipo 2",

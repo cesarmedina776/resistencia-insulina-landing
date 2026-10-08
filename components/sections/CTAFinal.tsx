@@ -21,7 +21,7 @@ const REFUERZOS = [
   },
   {
     label: "El valor",
-    texto: "5 módulos, 3 bonos y soporte en WhatsApp, por una fracción de su valor real de 301 USD.",
+    texto: "6 módulos, 3 bonos y soporte en WhatsApp, por una fracción de su valor real de 301 USD.",
     tone: "border-gold/40 bg-gold/10 text-gold-light",
     icon: "★",
   },
